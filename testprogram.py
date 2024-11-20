@@ -2,7 +2,6 @@ import json
 import time
 import os
 
-# Paths to JSON files
 input_file = "request.json"
 output_file = "response.json"
 

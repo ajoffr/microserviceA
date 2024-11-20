@@ -14,8 +14,13 @@ if not os.path.exists(high_score_file):
 def read_request():
     """Read request from the input JSON file."""
     if os.path.exists(input_file):
-        with open(input_file, "r") as file:
-            return json.load(file)
+        try:
+            with open(input_file, "r") as file:
+                data = file.read()
+                if data.strip():  # check that file is not empty
+                    return json.loads(data)
+        except json.JSONDecodeError:
+            print("Invalid JSON format in request.json")
     return None
 
 
