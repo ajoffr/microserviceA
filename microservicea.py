@@ -1,7 +1,6 @@
 import json
 import os
 
-# input and output JSON files
 input_file = "request.json"
 output_file = "response.json"
 high_score_file = "high_score.json"
